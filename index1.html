@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Car Rental Payment</title>
+  <link rel="stylesheet" href="styles.css" />
+</head>
+
+<body>
+  <div class="payment-container">
+    <h2>Rent Your Car</h2>
+
+    <div id="carInfo" class="car-info"></div>
+    <div id="carImgWrap" style="text-align:center;margin-bottom:18px;"></div>
+
+    <input type="text"   id="cardName"   placeholder="Cardholder Name" required />
+    <input type="text"   id="cardNumber" placeholder="Card Number"     required />
+    <input type="number" id="amount"     placeholder="Amount (₹)"      required />
+    <button class="pay-btn" onclick="processPayment()">Pay Now</button>
+
+    <div id="loader" class="loader" style="display:none;"></div>
+    <div id="paymentStatus" class="status"></div>
+  </div>
+
+  <!-- Original script -->
+  <script src="script.js"></script>
+
+  <!-- Handle query parameters and prefill -->
+  <script>
+  document.addEventListener("DOMContentLoaded", () => {
+    const p   = new URLSearchParams(location.search);
+    const car = p.get("car")   ?? "";
+    const img = p.get("img")   ?? "";
+    const pricePerDay = parseFloat(p.get("price") ?? "0");
+
+    const startDateStr = localStorage.getItem("startDate");
+    const endDateStr   = localStorage.getItem("endDate");
+
+    let days = 1;
+    if (startDateStr && endDateStr) {
+        const ms = new Date(endDateStr) - new Date(startDateStr);
+        days = Math.max(1, Math.ceil(ms / (1000*60*60*24)));
+    }
+
+    const total = days * pricePerDay;
+
+    document.getElementById("carInfo").innerHTML = `
+        <b>Car:</b> ${car}<br>
+        <b>Dates:</b> ${startDateStr} → ${endDateStr} (${days} day${days>1?"s":""})<br>
+        <b>Price per day:</b> ₹${pricePerDay}<br>
+        <b>Total Price:</b> ₹${total}
+    `;
+
+    if (img) {
+        document.getElementById("carImgWrap").innerHTML =
+          `<img src="${img}" alt="${car}" style="max-width:220px;max-height:120px;border-radius:10px;box-shadow:0 2px 8px #0002;">`;
+    }
+
+    const amt = document.getElementById("amount");
+    if (amt) amt.value = total;
+  });
+
+  // 👇 Simulated payment and redirect
+  function processPayment() {
+    const loader = document.getElementById("loader");
+    const status = document.getElementById("paymentStatus");
+
+    loader.style.display = "block";
+    status.textContent = "";
+
+    // simulate 2s delay then redirect
+    setTimeout(() => {
+      loader.style.display = "none";
+      status.textContent = "Payment Successful! Redirecting...";
+      status.style.color = "green";
+
+      setTimeout(() => {
+        window.location.href = "payment.html";
+      }, 1000);
+    }, 2000);
+  }
+  </script>
+</body>
+</html>

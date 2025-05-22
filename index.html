@@ -1,0 +1,426 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>Car Rental Landing Page</title>
+    <link rel="stylesheet" href="style.css">
+    <link href="https://cdn.jsdelivr.net/npm/remixicon@4.5.0/fonts/remixicon.css" rel="stylesheet"/>
+    <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
+    <link rel="shortcut icon" href="https://i.postimg.cc/gcZdykyW/jeep.png">
+    <script src="https://unpkg.com/scrollreveal"></script>
+</head>
+<body>
+    <header>
+        <a href="#" class="logo" style="display: flex; align-items: center; gap: 8px; text-decoration: none;">
+            <img src="https://i.postimg.cc/gcZdykyW/jeep.png" alt="car logo" style="height: 40px;">
+            <p style="color: orange; font-weight: bold; font-size: 200%; margin: 0; font-family: Georgia, serif;">
+                Wheels Mart
+            </p>
+        </a>
+        <i class='bx bx-menu' id="menu-icon"></i>
+        <ul class="navbar">
+            <li><a href="#home">Home</a></li>
+            <li><a href="#ride">Ride</a></li>
+            <li><a href="#luxury cars">Luxury Cars</a></li>
+            <li><a href="#services">Services</a></li>
+            <li><a href="#about">About</a></li>
+            <li><a href="#reviews">Reviews</a></li>
+        </ul>
+    </header>
+
+    <section class="home" id="home">
+        <div class="text">
+            <h1><span>Looking</span> to <br>rent a car</h1>
+            <p>Where Will the Road Take You? Rent a Car and Find Out!</p>
+            <div class="app-stores">
+                <img src="https://i.postimg.cc/tRY8QX2M/ios.png" alt="ios image">
+                <img src="https://i.postimg.cc/2yRQKFHm/android.png" alt="android image">
+            </div>
+        </div>
+        <section class="form-container" id="home">
+            <form>
+                <div class="input-box">
+                    <span>Pick-up Date</span>
+                    <input type="date" id="pickup-date" />
+                </div>
+                <div class="input-box">
+                    <span>Return Date</span>
+                    <input type="date" id="return-date" />
+                </div>
+                <button id="searchBtn" class="btn" type="button" onclick="handleSearch()">Search</button>
+            </form>
+        </section>
+    </section>
+
+    <section class="ride" id="ride">
+        <div class="heading">
+            <span>How it's works</span>
+            <h1>Rent with 3 easy steps</h1>
+        </div>
+        <div class="ride-container">
+            <div class="box">
+                <i class="ri-map-2-line"></i>
+                <h2>Choose a Location</h2>
+                <p>Browse our wide selection of vehicles according to location</p>
+            </div>
+            <div class="box">
+                <i class="ri-calendar-line"></i>
+                <h2>Choose a Date</h2>
+                <p>Choose a date that fits your needs and budget</p>
+            </div>
+            <div class="box">
+                <i class="ri-bookmark-line"></i>
+                <h2>Book a Car</h2>
+                <p>Enter your details for a quick and secure booking</p>
+            </div>
+        </div>
+    </section>
+
+    <section class="luxury cars" id="luxury cars">
+        <div class="heading">
+            <span>Luxury Collection</span>
+            <h1>COMING SOON!!!!</h1>
+        </div>
+    </section>
+
+    <section class="services" id="services">
+        <div class="heading">
+            <span>Best Services</span>
+            <h1>Explore our Top Deals <br> From Top Rated Dealers</h1>
+        </div>
+        <div class="services-container">
+            <!-- Car cards will be dynamically added here via JavaScript -->
+        </div>
+    </section>
+
+    <section class="about" id="about">
+        <div class="heading">
+            <span>About Us</span>
+            <h1>Best Customer Experience</h1>
+        </div>
+        <div class="about-container">
+            <div class="about-img"><img src="https://i.postimg.cc/KjtmmbFC/about.png" alt="about banner"></div>
+            <div class="about-text">
+                <span>About us</span>
+                <p>We're passionate about providing you with the perfect vehicle for your needs. Whether you're looking for a short-term rental or a long-term purchase, we offer a diverse selection of cars to suit every taste and budget</p>
+                <p>Our commitment to excellence begins with our extensive inventory, carefully curated to include a wide range of makes, models, and years. We pride ourselves on maintaining a high standard of vehicle quality, ensuring each car undergoes a rigorous inspection process before being offered for sale or rent</p>
+                <a href="#" class="btn" onclick="handleLearnMore(event)">Learn More</a>
+            </div>
+        </div>
+    </section>
+
+    <section class="reviews" id="reviews">
+        <div class="heading">
+            <span>Reviews</span>
+            <h1>What our Customers Say</h1>
+        </div>
+        <div class="reviews-container">
+            <div class="box">
+                <div class="rev-img"><img src="https://photosnow.net/wp-content/uploads/2024/04/no-dp-mood-off_9.jpg" alt="review image"></div>
+                <h2>srinivas</h2>
+                <div class="stars">
+                    <i class="ri-star-fill"></i>
+                    <i class="ri-star-fill"></i>
+                    <i class="ri-star-fill"></i>
+                    <i class="ri-star-fill"></i>
+                    <i class="ri-star-half-fill"></i>
+                </div>
+                <p>I was impressed with the condition of the vehicle I rented. It was clean, well-maintained, and drove perfectly. It made my road trip so much more enjoyable knowing I was driving a reliable and comfortable car. Highly recommend!</p>
+            </div>
+            <div class="box">
+                <div class="rev-img"><img src="https://photosnow.net/wp-content/uploads/2024/04/no-dp-mood-off_9.jpg" alt="review image"></div>
+                <h2>Srikanth</h2>
+                <div class="stars">
+                    <i class="ri-star-fill"></i>
+                    <i class="ri-star-fill"></i>
+                    <i class="ri-star-fill"></i>
+                    <i class="ri-star-fill"></i>
+                    <i class="ri-star-fill"></i>
+                </div>
+                <p>I needed a car for a week, and here I offered the best value for my money. Their prices were competitive, and the overall experience was worth every penny. I wouldn't hesitate to rent from them again!</p>
+            </div>
+            <div class="box">
+                <div class="rev-img"><img src="https://photosnow.net/wp-content/uploads/2024/04/no-dp-mood-off_9.jpg" alt="review image"></div>
+                <h2>Rupa Sri</h2>
+                <div class="stars">
+                    <i class="ri-star-fill"></i>
+                    <i class="ri-star-fill"></i>
+                    <i class="ri-star-fill"></i>
+                    <i class="ri-star-fill"></i>
+                    <i class="ri-star-fill"></i>
+                </div>
+                <p>The online booking process was easy, the car was ready on time, and the return was just as straightforward. No hidden fees, no hassle - just a great experience from start to finish. I'll definitely be using them again!</p>
+            </div>
+        </div>
+    </section>
+
+    <section class="newsletter">
+        <h2>Subscribe to Newsletter</h2>
+        <div class="box">
+            <input type="text" placeholder="Enter your email">
+            <a href="#" class="btn" onclick="handleSubscribe(event)">Subscribe</a>
+        </div>
+    </section>
+
+    <div class="copyright">
+        <p>© All rights reserved</p>
+        <div class="social">
+            <a href="#"><i class="ri-facebook-fill"></i></a>
+            <a href="#"><i class="ri-twitter-x-line"></i></a>
+            <a href="#"><i class="ri-instagram-line"></i></a>
+        </div>
+    </div>
+
+    <script src="main.js"></script>
+    <script>
+        function handleSearch() {
+            const start = document.getElementById("pickup-date").value;
+            const end = document.getElementById("return-date").value;
+
+            if (!start || !end) {
+                alert("Please select both pick-up and return dates.");
+                return;
+            }
+            if (new Date(end) < new Date(start)) {
+                alert("Return date must be after pick-up date.");
+                return;
+            }
+            localStorage.setItem("startDate", start);
+            localStorage.setItem("endDate", end);
+            window.location.href = "index2.html";
+        }
+
+        function handleLearnMore(event) {
+            event.preventDefault(); 
+            alert('Yet to come');
+        }
+
+        function handleSubscribe(event) {
+            event.preventDefault(); 
+            const emailInput = document.querySelector('.newsletter input[type="text"]');
+            const email = emailInput.value.trim();
+            if (!email) {
+                alert('Email required');
+            } else {
+                alert('Thanks for subscribing');
+                emailInput.value = ''; 
+            }
+        }
+
+        document.addEventListener('DOMContentLoaded', () => {
+
+            const cars = [
+                {
+                    year: 2025,
+                    model: 'Honda Civic Type R',
+                    price: 20000,
+                    image: 'https://i.postimg.cc/T31DwXXs/car1.jpg'
+                },
+                {
+                    year: 2025,
+                    model: 'Honda Civic',
+                    price: 28450,
+                    image: 'https://i.postimg.cc/QdvHd9mB/car2.jpg'
+                },
+                {
+                    year: 2025,
+                    model: 'Honda Civic Si',
+                    price: 29000,
+                    image: 'https://i.postimg.cc/s2S1QjHT/car3.jpg'
+                },
+                {
+                    year: 2023,
+                    model: 'Honda Civic Type R',
+                    price: 43000,
+                    image: 'https://i.postimg.cc/rsYqZ3Yd/car4.jpg'
+                },
+                {
+                    year: 2023,
+                    model: 'Honda Civic Type R',
+                    price: 43000,
+                    image: 'https://i.postimg.cc/jqnj5QCR/car5.jpg'
+                },
+                {
+                    year: 2024,
+                    model: 'Skoda Kylaq',
+                    price: 13000,
+                    image: 'https://imgd.aeplcdn.com/310x174/n/cw/ec/171777/kylaq-exterior-right-front-three-quarter-5.jpeg?isig=0&q=80'
+                },
+                {
+                    year: 2025,
+                    model: 'Jeep Compass',
+                    price: 4000,
+                    image: 'https://imgd.aeplcdn.com/227x128/media/bw/hu77mfb_1823865.jpg?q=80'
+                },
+                {
+                    year: 2025,
+                    model: 'Skoda Salvia',
+                    price: 3500,
+                    image: 'https://imgd.aeplcdn.com/310x174/n/cw/ec/175951/slavia-exterior-right-front-three-quarter-7.jpeg?isig=0&q=80'
+                },
+                {
+                    year: 2024,
+                    model: 'Volkswagen Virtus',
+                    price: 3750,
+                    image: 'https://imgd.aeplcdn.com/310x174/n/cw/ec/144681/virtus-exterior-left-front-three-quarter.jpeg?isig=0&q=80'
+                },
+                {
+                    year: 2025,
+                    model: 'Tata Altroz 2025',
+                    price: 2300,
+                    image: 'https://imgd.aeplcdn.com/310x174/n/cw/ec/32597/altroz-exterior-left-front-three-quarter-11.jpeg?isig=0&q=80'
+                },
+                {
+                    year: 2024,
+                    model: 'Tata Curvv',
+                    price: 4500,
+                    image: 'https://imgd.aeplcdn.com/664x374/n/cw/ec/139651/curvv-exterior-right-front-three-quarter-15.jpeg?isig=0&q=80'
+                },
+                {
+                    year: 2023,
+                    model: 'Maruti Brezza',
+                    price: 2000,
+                    image: 'https://imgd.aeplcdn.com/664x374/n/cw/ec/107543/brezza-exterior-right-front-three-quarter-9.jpeg?isig=0&q=80'
+                },
+                {
+                    year: 2025,
+                    model: 'Maruti Fronx',
+                    price: 2000,
+                    image: 'https://imgd.aeplcdn.com/310x174/n/cw/ec/130591/fronx-exterior-right-front-three-quarter-108.jpeg?isig=0&q=80'
+                },
+                {
+                    year: 2024,
+                    model: 'Hyundai Venue',
+                    price: 3000,
+                    image: 'https://imgd.aeplcdn.com/310x174/n/cw/ec/141113/venue-exterior-left-front-three-quarter-4.jpeg?isig=0&q=80'
+                },
+                {
+                    year: 2025,
+                    model: 'Honda Elevate',
+                    price: 3500,
+                    image: 'https://imgd.aeplcdn.com/310x174/n/cw/ec/142515/elevate-exterior-right-front-three-quarter-27.jpeg?isig=0&q=80'
+                },
+                {
+                    year: 2025,
+                    model: 'Mahindra BE 6',
+                    price: 5500,
+                    image: 'https://imgd.aeplcdn.com/664x374/n/cw/ec/131825/be-6e-exterior-right-front-three-quarter-5.jpeg?isig=0&q=80'
+                },
+                {
+                    year: 2023,
+                    model: 'Renault Kiger',
+                    price: 3000,
+                    image: 'https://imgd.aeplcdn.com/310x174/n/cw/ec/141857/kiger-exterior-front-view-2.jpeg?isig=0&q=80'
+                },
+                {
+                    year: 2024,
+                    model: 'Citroen C3',
+                    price: 1700,
+                    image: 'https://imgd.aeplcdn.com/310x174/n/cw/ec/103611/c3-exterior-right-front-three-quarter-3.jpeg?isig=0&q=80'
+                },
+                {
+                    year: 2025,
+                    model: 'Defender',
+                    price: 95000,
+                    image: 'https://imgd.aeplcdn.com/310x174/n/cw/ec/55215/defender-exterior-right-front-three-quarter-6.jpeg?isig=0&q=80'
+                },
+                {
+                    year: 2025,
+                    model: 'Discovery Sport',
+                    price: 80000,
+                    image: 'https://imgd.aeplcdn.com/664x374/n/cw/ec/127321/discovery-sport-exterior-right-front-three-quarter-3.jpeg?isig=0&q=80'
+                },
+                {
+                    year: 2024,
+                    model: 'Lexus NX',
+                    price: 75500,
+                    image: 'https://imgd.aeplcdn.com/664x374/n/cw/ec/113023/nx-2022-exterior-right-front-three-quarter-2.jpeg?isig=0&q=80'
+                },
+                {
+                    year: 2023,
+                    model: 'MG Hector',
+                    price: 4760,
+                    image: 'https://imgd.aeplcdn.com/664x374/n/cw/ec/130583/hector-exterior-right-front-three-quarter-86.jpeg?isig=0&q=80'
+                },
+                {
+                    year: 2023,
+                    model: 'MG Astor',
+                    price: 4000,
+                    image: 'https://imgd.aeplcdn.com/310x174/n/cw/ec/51940/astor-exterior-right-side-view-2.jpeg?isig=0&q=80'
+                },
+                {
+                    year: 2025,
+                    model: 'Toyota Urban Cruiser Hyryder',
+                    price: 3850,
+                    image: 'https://imgd.aeplcdn.com/664x374/n/cw/ec/124027/hyryder-exterior-right-front-three-quarter-73.jpeg?isig=0&q=80'
+                },
+                {
+                    year: 2025,
+                    model: 'Hyundai Creta',
+                    price: 3000,
+                    image: 'https://imgd.aeplcdn.com/310x174/n/cw/ec/106815/creta-exterior-left-side-view-4.jpeg?isig=0&q=80'
+                },
+                {
+                    year: 2023,
+                    model: 'Kia Syros',
+                    price: 4900,
+                    image: 'https://imgd.aeplcdn.com/664x374/n/cw/ec/168707/syros-exterior-right-front-three-quarter-11.jpeg?isig=0&q=80'
+                },
+                {
+                    year: 2024,
+                    model: 'Mahindra Thar Roxx',
+                    price: 5500,
+                    image: 'https://imgd.aeplcdn.com/664x374/n/cw/ec/124839/thar-roxx-exterior-right-front-three-quarter-25.jpeg?isig=0&q=80'
+                },
+                {
+                    year: 2022,
+                    model: 'Mahindra Marazzo',
+                    price: 4450,
+                    image: 'https://imgd.aeplcdn.com/664x374/n/cw/ec/49114/marazzo-exterior-right-front-three-quarter-5.jpeg?isig=0&q=80'
+                },
+                {
+                    year: 2023,
+                    model: 'Force Motors Trax Cruiser',
+                    price: 5550,
+                    image: 'https://imgd.aeplcdn.com/664x374/n/cw/ec/135589/trax-cruiser-exterior-right-front-three-quarter-2.jpeg?isig=0&q=80'
+                },
+                {
+                    year: 2025,
+                    model: 'Toyota Rumion',
+                    price: 3850,
+                    image: 'https://imgd.aeplcdn.com/664x374/n/cw/ec/105799/rumion-exterior-right-front-three-quarter-5.jpeg?isig=0&q=80'
+                },
+                {
+                    year: 2025,
+                    model: 'Maruti XL6',
+                    price: 3880,
+                    image: 'https://imgd.aeplcdn.com/664x374/n/cw/ec/115601/2022-xl6-exterior-right-front-three-quarter-12.jpeg?isig=0&q=80'
+                }
+            ];
+
+            const servicesContainer = document.querySelector('.services-container');
+
+            function createCarCard(car) {
+                const carCard = document.createElement('div');
+                carCard.classList.add('box');
+
+                carCard.innerHTML = `
+                    <div class="box-img"><img src="${car.image}" alt="car image"></div>
+                    <p>${car.year}</p>
+                    <h3>${car.model}</h3>
+                    <h2>${car.price.toLocaleString()} <span>/perday</span></h2>
+                    <a href="#" class="btn">Rent Now</a>
+                `;
+
+                return carCard;
+            }
+
+            cars.forEach(car => {
+                const carCard = createCarCard(car);
+                servicesContainer.appendChild(carCard);
+            });
+
+            ScrollReveal().reveal('.services-container .box', { delay: 200, distance: '20px', origin: 'bottom' });
+        });
+    </script>
+</body>
+</html>

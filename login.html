@@ -1,0 +1,169 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+ 
+  <title>Wheels Mart</title>
+  <script type="module" src="https://unpkg.com/@splinetool/viewer@1.9.96/build/spline-viewer.js"></script>
+  <style>
+    	
+    spline-viewer {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100vw;
+      height: 100vh;
+z-index:-1;
+          }
+
+    
+    .header {
+      position: absolute;
+      top: 20px;
+      left: 50%;
+      transform: translateX(-50%);
+      font-size: 70px;
+      font-weight: bold;
+      color: red;
+     
+    }
+
+    .form-section {
+      position: absolute;
+      right: 50px;
+      top: 50%;
+      transform: translateY(-50%);
+      display: flex;
+      flex-direction: column;
+      align-items: flex-start;
+      color: #fff;
+    }
+
+    .form-section h2 {
+      color: red;
+      margin-bottom: 20px;
+      font-size: 28px;
+    }
+
+    .form-section input {
+      padding: 10px 15px;
+      margin-bottom: 10px;
+      font-size: 14px;
+      border: 1px solid #ccc;
+      border-radius: 8px;
+      width: 250px;
+    }
+
+    .form-section button {
+      background-color: red;
+      color: white;
+      border: none;
+      padding: 10px 20px;
+      border-radius: 8px;
+      font-size: 14px;
+      margin-top: 10px;
+      cursor: pointer;
+    }
+
+    .form-section button:hover {
+      background-color: #cc0000;
+    }
+
+    .toggle-button {
+      background-color: white;
+      color: red;
+      margin-top: 20px;
+      font-weight: bold;
+      font-size: 15px;
+      padding: 10px 20px;
+      border-radius: 8px;
+      cursor: pointer;
+      border: none;
+    }
+
+    .toggle-button:hover {
+      background-color: #ffcccc;
+    }
+
+    .toggle-text {
+      margin-top: 10px;
+      font-size: 16px;
+      color: white;
+      font-weight: 500;
+    }
+
+    #email {
+      display: none;
+    }
+  </style>
+</head>
+<body>
+
+  <!-- Spline 3D background -->
+  <spline-viewer url="https://prod.spline.design/Lpu2N6qWy3yOviIU/scene.splinecode"></spline-viewer>
+
+  <!-- Top Center Heading -->
+  <div class="header">Wheels Mart</div>
+
+  <!-- Right-side Form Section -->
+  <div class="form-section">
+    <h2 id="form-title">Login</h2>
+    <input type="text" id="username" placeholder="Username" />
+    <input type="email" id="email" placeholder="Email" />
+    <input type="password" id="password" placeholder="Password" />
+    <button onclick="handleSubmit()">Login</button>
+    <div class="toggle-text" id="toggle-description">Don't have an account?</div>
+    <button class="toggle-button" onclick="toggleForm()">Register</button>
+  </div>
+
+  <script>
+    let isLogin = true;
+
+    const title = document.getElementById('form-title');
+    const emailInput = document.getElementById('email');
+    const toggleText = document.getElementById('toggle-description');
+    const toggleButton = document.querySelector('.toggle-button');
+    const usernameInput = document.getElementById('username');
+    const passwordInput = document.getElementById('password');
+
+    function toggleForm() {
+      isLogin = !isLogin;
+      if (isLogin) {
+        title.textContent = "Login";
+        emailInput.style.display = "none";
+        toggleText.textContent = "Don't have an account?";
+        toggleButton.textContent = "Register";
+      } else {
+        title.textContent = "Register";
+        emailInput.style.display = "block";
+        toggleText.textContent = "Already have an account?";
+        toggleButton.textContent = "Login";
+      }
+    }
+
+    function handleSubmit() {
+      const username = usernameInput.value;
+      const password = passwordInput.value;
+      const email = emailInput.value;
+
+      if (isLogin) {
+        const storedUser = JSON.parse(localStorage.getItem('user'));
+        if (storedUser && storedUser.username === username && storedUser.password === password) {
+          alert("Login successful!");
+          window.location.href = "index.html";
+        } else {
+          alert("Invalid username or password.");
+        }
+      } else {
+        if (!username || !email || !password) {
+          alert("Please fill out all fields.");
+          return;
+        }
+        localStorage.setItem('user', JSON.stringify({ username, email, password }));
+        alert("Registration successful! You can now log in.");
+        toggleForm();
+      }
+    }
+  </script>
+
+</body>
+</html>

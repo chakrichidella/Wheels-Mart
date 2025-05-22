@@ -1,0 +1,135 @@
+* {
+    box-sizing: border-box;
+    font-family: 'Segoe UI', sans-serif;
+    margin: 0;
+    padding: 0;
+  }
+  
+  body {
+    background: #f7f7f7;
+    padding: 20px;
+  }
+  
+  header nav ul {
+    display: flex;
+    justify-content: flex-end;
+    gap: 30px;
+    list-style: none;
+    padding: 10px 20px;
+    background-color: #222;
+  }
+  
+  header nav ul li a {
+    color: white;
+    text-decoration: none;
+    font-size: 14px;
+  }
+  
+  .pricing-tabs {
+    display: flex;
+    justify-content: center;
+    margin: 30px 0;
+    gap: 15px;
+  }
+  
+  .pricing-tabs .tab {
+    background: #f1f1f1;
+    border: 2px solid #ffa500;
+    padding: 10px 20px;
+    border-radius: 30px;
+    font-weight: bold;
+    cursor: pointer;
+    transition: 0.3s;
+  }
+  
+  .pricing-tabs .tab.active,
+  .pricing-tabs .tab:hover {
+    background: #ffa500;
+    color: white;
+  }
+  
+  .car-listings {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-evenly;
+    gap: 25px;
+  }
+  
+  .car-card {
+    background: white;
+    border-radius: 15px;
+    box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+    width: 300px;
+    overflow: hidden;
+    transition: transform 0.3s;
+  }
+  
+  .car-card:hover {
+    transform: scale(1.03);
+  }
+  
+  .car-header {
+    display: flex;
+    justify-content: space-between;
+    padding: 15px;
+    background-color: #f5f5f5;
+    border-bottom: 1px solid #ddd;
+  }
+  
+  .car-header h2 {
+    font-size: 18px;
+  }
+  
+  .tag {
+    padding: 3px 10px;
+    font-size: 12px;
+    border-radius: 12px;
+    text-transform: uppercase;
+    font-weight: bold;
+  }
+  
+  .tag.hatchback {
+    background: #e0f0ff;
+    color: #007bff;
+  }
+  
+  .tag.suv {
+    background: #fff4e0;
+    color: #ff6f00;
+  }
+  .tag.sedan {
+    background: #e0ffe0;
+    color: #28a745;
+  }
+  
+  .car-card img {
+    width: 100%;
+    height: auto;
+  }
+  
+  .car-details {
+    padding: 15px;
+    font-size: 14px;
+  }
+  
+  .icons {
+    font-size: 13px;
+    color: #444;
+    margin: 10px 0;
+  }
+  
+  .book-btn {
+    width: 100%;
+    background: #ff6f00;
+    color: white;
+    border: none;
+    padding: 12px;
+    font-weight: bold;
+    border-radius: 10px;
+    cursor: pointer;
+    transition: background 0.3s;
+  }
+  
+  .book-btn:hover {
+    background: #e65c00;
+  }
